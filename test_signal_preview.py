@@ -1,3 +1,5 @@
+print("DEBUG TELEGRAM TOKEN:", "OK" if TELEGRAM_TOKEN else "MISSING")
+print("DEBUG TELEGRAM CHAT ID:", TELEGRAM_CHAT_ID)
 from datetime import datetime, timezone, timedelta
 
 CORTE_QUALIDADE = 70
