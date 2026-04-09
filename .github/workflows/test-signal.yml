@@ -1,0 +1,13 @@
+name: Teste de Sinal (Simulação)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-signal:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Rodar teste de sinal
+        run: python test_signal_preview.py
