@@ -6,6 +6,12 @@ on:
 jobs:
   test-signal:
     runs-on: ubuntu-latest
+
+    # ✅ ISSO É O QUE FALTAVA
+    env:
+      TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+
     steps:
       - uses: actions/checkout@v4
 
