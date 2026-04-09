@@ -1,3 +1,11 @@
+import os
+import requests
+from datetime import datetime, timezone, timedelta
+
+# ✅ DEFINIR ANTES DE USAR
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
+TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
+
 print("DEBUG TELEGRAM TOKEN:", "OK" if TELEGRAM_TOKEN else "MISSING")
 print("DEBUG TELEGRAM CHAT ID:", TELEGRAM_CHAT_ID)
 from datetime import datetime, timezone, timedelta
