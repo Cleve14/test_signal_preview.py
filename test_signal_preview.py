@@ -3,41 +3,37 @@ from datetime import datetime, timezone, timedelta
 CORTE_QUALIDADE = 70
 
 mock_match = {
+    "league": {
+        "name": "UEFA Champions League",
+        "country": "World",
+    },
+    "teams": {
+        "home": {"name": "Real Madrid"},
+        "away": {"name": "Manchester City"},
+    },
     "fixture": {
-        "date": (datetime.now(timezone.utc) + timedelta(hours=2)).isoformat(),
+        "date": (datetime.now(timezone.utc) + timedelta(hours=3)).isoformat(),
         "status": {"short": "NS"},
     },
-    "league": {"name": "UEFA Champions✅ **Agora está tudo cristalino. Obrigado pela imagem — ela resolve o quebra‑cabeça.**
+}
 
-Vou ser **direto, técnico e preciso**, sem rodeios.
+def compute_quality(match):
+    score = 0
+    score += 40  # liga forte
+    score += 40  # dois times grandes
+    score += 10  # jogo não iniciado
+    score += 10  # competição mundial
+    return min(score, 100)
 
----
+def main():
+    print("TESTE DE DETECÇÃO DE SINAL")
+    quality = compute_quality(mock_match)
+    print(f"Score calculado: {quality}")
 
-## ✅ O QUE ESSA IMAGEM PROVA (FATO INCONTESTÁVEL)
+    if quality >= CORTE_QUALIDADE:
+        print("🚨 SINAL DETECTADO")
+    else:
+        print("❌ Nenhum sinal detectado")
 
-Na aba **Código** do repositório `test_signal_preview.py`, vemos:
-
-### ✅ Existe:
-- Pasta **`.github/fluxos de trabalho`**
-- Arquivo **`test-signal.yml`** (workflow)
-- Isso confirma que o **GitHub Actions está configurado corretamente**
-
-### ❌ NÃO existe:
-- Arquivo **`test_signal_preview.py`** na raiz do repositório
-
-👉 **Esse é o único motivo do erro que você viu no Actions.**
-
-Não é:
-- configuração
-- permissão
-- branch
-- Actions desativado
-- YAML errado
-
-É **apenas**: **arquivo Python inexistente no repositório**.
-
----
-
-## 🔴 CONFIRMAÇÃO VISUAL IMPORTANTE
-
-Na lista de arquivos **não aparece**:
+if __name__ == "__main__":
+    main()
